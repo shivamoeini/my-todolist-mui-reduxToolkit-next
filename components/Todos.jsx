@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addTodos } from "../redux/reducer";
-import { useForm } from 'react-hook-form';
 
 
 import Box from '@mui/material/Box';
@@ -20,12 +19,8 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-
-
-
-const Todos = ({props}) => {
+const Todos = (props) => {
     const [todo, setTodo] = useState("");
-    const [value, setValue] = useState('');
 
     const handleChange = (e) => {
         setTodo(e.target.value);
@@ -46,42 +41,18 @@ const Todos = ({props}) => {
 
 
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
-
-    const onSubmit = (data) => {
-        console.log(data);
-    };
-
-
-
-
-
 
     return (
-
-        <Box 
-        display={"flex"}
-         justifyContent={'center'}
-         >
-            <form  
-            onSubmit={handleSubmit(onSubmit)}
-            >
-
+        <form action="">
+            <Box display={"flex"} justifyContent={'center'}>
                 <TextField type="text"
                     onChange={(e) => handleChange(e)}
                     size="medium"
-                    value={todo}
-                    {...register("text")} />
-                console.log( {...register("text")} );
+                    value={todo} />
                 <Button variant="contained"
-                    type="submit" onClick={() => add()}>ADD</Button>
-
-            </form>
-        </Box>
+                    onClick={() => add()}>ADD</Button>
+            </Box>
+        </form>
 
 
 
