@@ -44,8 +44,7 @@ const TodoItem = (props) => {
     >
 
       <textarea
-        multiline
-        ref={inputRef}
+       ref={inputRef}
         disabled={inputRef}
         defaultValue={item.item}
         onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
