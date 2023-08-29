@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 
 const Todos = () => {
   const dispatch = useDispatch();
+  
   const {
     register,
     formState: { errors },
@@ -37,13 +38,14 @@ const Todos = () => {
           size='medium'
           label='Enter title'
           error={!!errors.title}
+          data-testid="newItemField"
           helperText={errors.title?.message}
           {...register('title', {
             required: { message: '*Title is required', value: true }
           })}
         />
-        <Button variant='contained' type='submit'>
-          ADD
+        <Button variant='contained' data-testid="addBtn" type='submit'>
+          Add Todo
         </Button>
       </form>
     </Box>
