@@ -37,6 +37,7 @@ const Todos = () => {
           type='text'
           size='medium'
           label='Enter title'
+          placeholder='Enter todo'
           error={!!errors.title}
           data-testid="newItemField"
           helperText={errors.title?.message}
@@ -45,7 +46,7 @@ const Todos = () => {
           })}
         />
         <Button variant='contained' data-testid="addBtn" type='submit'>
-          Add Todo
+          Add
         </Button>
       </form>
     </Box>

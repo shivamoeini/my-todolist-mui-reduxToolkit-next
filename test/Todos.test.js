@@ -3,7 +3,12 @@ import Todos from "../components/Todos";
 import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
 import store from "../redux/store"
+
+
 import { addTodos, removeTodos, updateTodos, completeTodos } from "../redux/reducer"
+
+
+
 describe("<Todos />", () => {
     // Display the add button
     it('Display the add button', () => {
@@ -21,7 +26,15 @@ describe("<Todos />", () => {
         const inputText = screen.getByLabelText('Enter title');
         expect(inputText).toBeInTheDocument();
     })
-
+    
+// it("AddTodo Contains input firld and it has foucs on mount",()=>{
+//     render(<Provider store={store}>
+//         <Todos />
+//     </Provider>)
+//     const inputField=screen.getByPlaceholderText('Enter todo');
+//     fireEvent.focus(inputField);
+//     expect(inputField).toHaveFocus();
+// })
 });
 
 // describe("<Todos />", () => {
@@ -39,6 +52,9 @@ describe("<Todos />", () => {
 //         expect(todoElement).toBeInTheDocument();
 //     })
 // })
+
+
+
 const MockTodo = configureStore([])
 store = MockTodo({
     id: 1,
@@ -57,7 +73,7 @@ describe("<Todos />", () => {
         store.dispatch(addTodos("new task"));
         expect(store.getActions()).toEqual([addTodos("new task")])
     })
-
+})
 
 
     // test('When the Add button is clicked', () => {
@@ -93,4 +109,31 @@ describe("<Todos />", () => {
     //     // Assert the expected value
     //     expect(inputValue).toBe('Your text');
     // });
-})
+
+
+
+    // const addTodoList = (listName) => {
+    //     // Replace this mock implementation with your actual logic
+    //     const todoList = {
+    //       id: Math.random().toString(),
+    //       name: listName,
+    //       items: [],
+    //     };
+      
+    //     // Add the todo list item to the application state
+    //     // You can use useState or any state management solution here
+    //     // For example, if you're using React's useState hook:
+    //     setTodoLists((prevTodoLists) => [...prevTodoLists, todoList]);
+    //   };
+      
+    //   // Mock function to search for a todo list item
+    //   const searchTodoList = (searchTerm) => {
+    //     // Replace this mock implementation with your actual logic
+    //     // Filter the todo lists based on the search term
+    //     const filteredTodoLists = todoLists.filter((list) =>
+    //       list.name.toLowerCase().includes(searchTerm.toLowerCase())
+    //     );
+      
+    //     // Return the filtered todo lists
+    //     return filteredTodoLists;
+    //   };
