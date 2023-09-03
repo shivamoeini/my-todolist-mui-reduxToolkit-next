@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
-import { AiFillEdit } from "react-icons/ai";
-import { IoCheckmarkDoneSharp, IoClose } from "react-icons/io5";
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import DeleteIcon from '@mui/icons-material/Delete';

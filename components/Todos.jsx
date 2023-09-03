@@ -45,7 +45,7 @@ const Todos = () => {
             required: { message: '*Title is required', value: true }
           })}
         />
-        <Button variant='contained' data-testid="addBtn" type='submit'>
+        <Button variant='contained'  type='submit'>
           Add
         </Button>
       </form>
